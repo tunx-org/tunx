@@ -1,11 +1,18 @@
-# tunx
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/tunx-lockup-dark.svg">
+    <img src="assets/tunx-lockup-light.svg" alt="tunx" height="52">
+  </picture>
+</p>
 
 Send all traffic of WSL2 (or any Linux with systemd) into an Xray TUN, and let your own Xray config decide where it goes: outbound proxies, split rules, and LAN direct are all written in the Xray config. Programs that ignore proxy variables, UDP, and DNS are all covered.
+
+Website: <https://tunx.org>
 
 The script handles only the infrastructure: installing Xray, the TUN and policy routing (cut off rather than leak when it fails), DNS, systemd services, and restoring everything on uninstall. Once a config exists, it is never overwritten.
 
 ```bash
-git clone https://github.com/xiongyumail/tunx.git
+git clone https://github.com/tunx-org/tunx.git
 cd tunx
 cp examples/vless-reality.jsonc my.jsonc     # fill in your upstream
 sudo ./install.sh install --config my.jsonc
